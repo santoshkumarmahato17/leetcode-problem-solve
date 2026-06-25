@@ -2,10 +2,20 @@ import os
 import json
 import re
 
+def make_progress_bar(percentage, length=10):
+    """
+    Generates a text-based horizontal progress bar.
+    Example: 60% -> ██████░░░░
+    """
+    filled = round((percentage / 100) * length)
+    empty = length - filled
+    return "█" * filled + "░" * empty
+
 def format_stats_markdown(stats):
     """
     Formats the LeetCode stats into a clean, modern native Markdown layout
-    using a dynamic Mermaid pie chart, clickable legend index, and collapsible topic lists.
+    using a dynamic Mermaid pie chart, clickable legend index with text progress bars,
+    and collapsible topic lists.
     """
     total_solved = stats["total_solved"]
     last_updated = stats["last_updated"]
@@ -34,16 +44,17 @@ def format_stats_markdown(stats):
         "HashMap": "🟫"
     }
 
-    # Generate interactive clickable legend table
+    # Generate interactive clickable legend table with text progress bars for mobile app support
     legend_rows = ""
     for topic, count in distribution.items():
         emoji = COLOR_MAP.get(topic, "⚪")
         display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
         percentage = (count / total_solved * 100) if total_solved > 0 else 0
         percentage_str = f"{round(percentage)}%"
+        progress_bar = make_progress_bar(percentage)
         
         folder_url = f"https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/{topic}"
-        legend_rows += f"| {emoji} | [**{display_name}**]({folder_url}) | `{count}` | `{percentage_str}` |\n"
+        legend_rows += f"| {emoji} | [**{display_name}**]({folder_url}) | `{count}` | `{percentage_str}` | `{progress_bar}` |\n"
 
     # Generate collapsible breakdowns for topics (linking headers as well)
     topic_breakdowns = ""
@@ -79,8 +90,8 @@ pie title Topic-wise Distribution
 {mermaid_slices}```
 
 #### 🔗 Clickable Topic Index & Legend
-| Color | Topic | Solved Count | Percentage |
-| :---: | :--- | :---: | :---: |
+| Color | Topic | Solved Count | Percentage | Progress Bar |
+| :---: | :--- | :---: | :---: | :---: |
 {legend_rows}
 #### 📂 Topic-wise Breakdowns
 {topic_breakdowns}<!-- END_LEETCODE_STATS -->"""
