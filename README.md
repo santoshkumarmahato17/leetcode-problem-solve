@@ -14,6 +14,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0042-trapping-rain-water](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0042-trapping-rain-water) |
 | [0075-sort-colors](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0075-sort-colors) |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
+| [0084-largest-rectangle-in-histogram](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0084-largest-rectangle-in-histogram) |
 | [0088-merge-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0088-merge-sorted-array) |
 | [0283-move-zeroes](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0283-move-zeroes) |
 | [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
@@ -93,8 +94,10 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0042-trapping-rain-water) |
+| [0084-largest-rectangle-in-histogram](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0084-largest-rectangle-in-histogram) |
 ## Monotonic Stack
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0042-trapping-rain-water) |
+| [0084-largest-rectangle-in-histogram](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0084-largest-rectangle-in-histogram) |
 <!---LeetCode Topics End-->
