@@ -1,1 +1,2 @@
-# No external dependencies required
+pandas>=1.3.0
+plotly>=5.0.0
