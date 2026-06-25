@@ -5,27 +5,41 @@ import re
 def format_stats_markdown(stats):
     """
     Formats the LeetCode stats into a clean, modern native Markdown layout
-    using a dynamic Mermaid pie chart.
+    using a dynamic Mermaid pie chart and collapsible topic lists.
     """
     total_solved = stats["total_solved"]
     last_updated = stats["last_updated"]
     distribution = stats["topic_distribution"]
+    problems_by_topic = stats.get("problems_by_topic", {})
     
     # Filter out categories with 0 solved problems for the chart
     filtered_dist = {k: v for k, v in distribution.items() if v > 0}
     
-    # Generate table rows for topics
-    topic_rows = ""
-    for topic, count in distribution.items():
-        # Humanize topic name for display (e.g. DynamicProgramming -> Dynamic Programming)
-        display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
-        topic_rows += f"| {display_name} | `{count}` |\n"
-        
     # Generate Mermaid slices
     mermaid_slices = ""
     for topic, count in filtered_dist.items():
         display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
         mermaid_slices += f'    "{display_name}" : {count}\n'
+        
+    # Generate collapsible breakdowns for topics
+    topic_breakdowns = ""
+    for topic in distribution.keys():
+        count = distribution[topic]
+        display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
+        topic_problems = problems_by_topic.get(topic, [])
+        
+        topic_breakdowns += f"<details>\n"
+        topic_breakdowns += f"<summary><b>{display_name}</b> ({count} solved)</summary>\n<br>\n\n"
+        
+        if topic_problems:
+            for p in topic_problems:
+                name = p["name"]
+                url = p["url"]
+                topic_breakdowns += f"- [{name}]({url})\n"
+        else:
+            topic_breakdowns += "_No problems solved yet in this category._\n"
+            
+        topic_breakdowns += "\n</details>\n\n"
         
     markdown_content = f"""<!-- START_LEETCODE_STATS -->
 ### 📊 LeetCode Progress & Stats
@@ -40,10 +54,7 @@ pie title Topic-wise Distribution
 {mermaid_slices}```
 
 #### 📂 Topic-wise Breakdowns
-| Topic | Solved Count |
-| :--- | :---: |
-{topic_rows}
-<!-- END_LEETCODE_STATS -->"""
+{topic_breakdowns}<!-- END_LEETCODE_STATS -->"""
 
     return markdown_content
 
@@ -65,7 +76,6 @@ def update_readme(target_repo_path, stats):
             
         # Replace template placeholders
         if "<!-- START_LEETCODE_STATS -->" in template_content and "<!-- END_LEETCODE_STATS -->" in template_content:
-            # Replace between markers
             pattern = re.compile(
                 r"<!--\s*START_LEETCODE_STATS\s*-->.*?<!--\s*END_LEETCODE_STATS\s*-->", 
                 re.DOTALL
@@ -74,7 +84,6 @@ def update_readme(target_repo_path, stats):
         elif "{{LEETCODE_STATS}}" in template_content:
             new_content = template_content.replace("{{LEETCODE_STATS}}", stats_md)
         else:
-            # If no placeholders, append to template content
             new_content = template_content + "\n\n" + stats_md
             
         with open(readme_path, 'w', encoding='utf-8') as f:
@@ -98,7 +107,6 @@ def update_readme(target_repo_path, stats):
                 f.write(new_content)
             print("Successfully updated LeetCode stats section in README.md.")
         else:
-            # Markers not found, append to existing README
             print("Markers not found. Appending LeetCode stats to the end of README.md.")
             new_content = readme_content.strip() + "\n\n" + stats_md + "\n"
             with open(readme_path, 'w', encoding='utf-8') as f:
@@ -131,7 +139,6 @@ if __name__ == "__main__":
     with open(stats_json_path, 'r', encoding='utf-8') as f:
         stats = json.load(f)
         
-    # Get target repository path from arguments, fallback to parent directory/target-repo
     if len(sys.argv) > 1:
         target_path = sys.argv[1]
     else:

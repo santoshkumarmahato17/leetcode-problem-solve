@@ -75,7 +75,7 @@ def get_problems_in_folder(folder_path):
 
 def parse_readme_topics(readme_path):
     """
-    Parses the main README.md to extract problem lists under topic headings.
+    Parses the main README.md to extract problem lists and their links under topic headings.
     """
     topic_problems = {}
     if not os.path.exists(readme_path):
@@ -96,12 +96,13 @@ def parse_readme_topics(readme_path):
         line = line.strip()
         if line.startswith('## '):
             current_topic = line[3:].strip()
-            topic_problems[current_topic] = set()
+            topic_problems[current_topic] = {}
         elif current_topic and line.startswith('| [') and '](http' in line:
-            match = re.search(r'\[([^\]]+)\]', line)
+            match = re.search(r'\[([^\]]+)\]\(([^)]+)\)', line)
             if match:
                 problem_name = match.group(1)
-                topic_problems[current_topic].add(problem_name)
+                problem_url = match.group(2)
+                topic_problems[current_topic][problem_name] = problem_url
                 
     return topic_problems
 
@@ -109,7 +110,7 @@ def generate_stats_data(repo_path):
     """
     Compiles problem counts for all target topics and overall total.
     """
-    solved_by_topic = {topic: set() for topic in TARGET_TOPICS}
+    solved_by_topic = {topic: {} for topic in TARGET_TOPICS}
     
     # 1. Attempt to count from folder structure (nested under target topic folders)
     folder_exists_and_not_empty = False
@@ -118,7 +119,9 @@ def generate_stats_data(repo_path):
         if os.path.isdir(topic_path):
             probs = get_problems_in_folder(topic_path)
             if probs:
-                solved_by_topic[topic] = probs
+                for p in probs:
+                    url = f"https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/main/{topic}/{p}"
+                    solved_by_topic[topic][p] = url
                 folder_exists_and_not_empty = True
                 
     # 2. Fallback: Parse README.md topic-wise markdown mapping
@@ -129,25 +132,37 @@ def generate_stats_data(repo_path):
         for parsed_topic, problems in parsed_topics.items():
             mapped_topic = TOPIC_MAPPING.get(parsed_topic)
             if mapped_topic in solved_by_topic:
-                for p in problems:
-                    solved_by_topic[mapped_topic].add(p)
+                for p, url in problems.items():
+                    solved_by_topic[mapped_topic][p] = url
                     
     # Format counts and total
     distribution = {topic: len(solved_by_topic[topic]) for topic in TARGET_TOPICS}
     total_solved = count_all_solved_problems(repo_path)
     
     # In case total_solved is 0 but we found topics in README
-    readme_total = len(set().union(*solved_by_topic.values()))
+    readme_total = len(set().union(*(solved_by_topic[t].keys() for t in TARGET_TOPICS)))
     if total_solved == 0 and readme_total > 0:
         total_solved = readme_total
 
+    # Format problems list for JSON
+    problems_json = {}
+    for topic in TARGET_TOPICS:
+        problems_json[topic] = []
+        sorted_probs = sorted(solved_by_topic[topic].keys())
+        for p in sorted_probs:
+            problems_json[topic].append({
+                "name": p,
+                "url": solved_by_topic[topic][p]
+            })
+
     # Current local time formatted nicely
-    now = datetime.now(timezone.utc).astimezone() # Local time of execution
+    now = datetime.now(timezone.utc).astimezone()
     last_updated = now.strftime("%Y-%m-%d %H:%M:%S %Z")
     
     return {
         "total_solved": total_solved,
         "topic_distribution": distribution,
+        "problems_by_topic": problems_json,
         "last_updated": last_updated
     }
 
