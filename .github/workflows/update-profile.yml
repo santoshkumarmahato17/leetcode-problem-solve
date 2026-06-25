@@ -22,23 +22,23 @@ jobs:
         with:
           python-version: '3.10'
 
-      # Step 3: Generate Stats
-      - name: Generate LeetCode Stats
+      # Step 3: Generate Stats & Charts
+      - name: Generate LeetCode Stats & Charts
         run: |
           python generate_stats.py
 
-      # Step 4: Commit and Push stats.json to Source Repo
+      # Step 4: Commit and Push stats.json & SVG charts to Source Repo
       - name: Commit changes to Source Repo
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stats.json
+          git add stats.json leetcode_stats_light.svg leetcode_stats_dark.svg
           # Commit only if there are changes. Use [skip ci] to prevent recursion.
           if ! git diff --quiet || ! git diff --staged --quiet; then
-            git commit -m "Update stats.json [skip ci]"
+            git commit -m "Update stats.json and charts [skip ci]"
             git push
           else
-            echo "No changes in stats.json."
+            echo "No changes in stats or charts."
           fi
 
       # Step 5: Checkout Target Profile Repository (santoshkumarmahato17)
@@ -49,10 +49,12 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
           path: target-repo
 
-      # Step 6: Copy stats to Target Repo, and run README generator
+      # Step 6: Copy stats & SVG charts to Target Repo, and run README generator
       - name: Update Target Profile README
         run: |
           cp stats.json target-repo/
+          cp leetcode_stats_light.svg target-repo/
+          cp leetcode_stats_dark.svg target-repo/
           python generate_readme.py target-repo
 
       # Step 7: Commit and Push to Target Profile Repository
@@ -61,8 +63,8 @@ jobs:
           cd target-repo
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md stats.json
-          # Remove any existing leetcode_stats.png or leetcode_stats.svg if they were pushed previously
+          git add README.md stats.json leetcode_stats_light.svg leetcode_stats_dark.svg
+          # Remove any old residual files if present
           if [ -f leetcode_stats.png ]; then
             git rm -f leetcode_stats.png
           fi
