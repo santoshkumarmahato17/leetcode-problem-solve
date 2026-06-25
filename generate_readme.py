@@ -5,7 +5,7 @@ import re
 def format_stats_markdown(stats):
     """
     Formats the LeetCode stats into a clean, modern native Markdown layout
-    using a dynamic Mermaid pie chart and collapsible topic lists.
+    using a dynamic Mermaid pie chart, clickable legend index, and collapsible topic lists.
     """
     total_solved = stats["total_solved"]
     last_updated = stats["last_updated"]
@@ -21,15 +21,40 @@ def format_stats_markdown(stats):
         display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
         mermaid_slices += f'    "{display_name}" : {count}\n'
         
-    # Generate collapsible breakdowns for topics
+    # Color emojis mapping for visual interactive legend
+    COLOR_MAP = {
+        "Arrays": "🟦",
+        "Strings": "🟪",
+        "Trees": "🟩",
+        "Graphs": "🔷",
+        "DynamicProgramming": "🟥",
+        "LinkedList": "🟨",
+        "Stack": "🟧",
+        "Queue": "🔋",
+        "HashMap": "🟫"
+    }
+
+    # Generate interactive clickable legend table
+    legend_rows = ""
+    for topic, count in distribution.items():
+        emoji = COLOR_MAP.get(topic, "⚪")
+        display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
+        percentage = (count / total_solved * 100) if total_solved > 0 else 0
+        percentage_str = f"{round(percentage)}%"
+        
+        folder_url = f"https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/{topic}"
+        legend_rows += f"| {emoji} | [**{display_name}**]({folder_url}) | `{count}` | `{percentage_str}` |\n"
+
+    # Generate collapsible breakdowns for topics (linking headers as well)
     topic_breakdowns = ""
     for topic in distribution.keys():
         count = distribution[topic]
         display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
         topic_problems = problems_by_topic.get(topic, [])
+        folder_url = f"https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/{topic}"
         
         topic_breakdowns += f"<details>\n"
-        topic_breakdowns += f"<summary><b>{display_name}</b> ({count} solved)</summary>\n<br>\n\n"
+        topic_breakdowns += f"<summary><b><a href=\"{folder_url}\">{display_name}</a></b> ({count} solved)</summary>\n<br>\n\n"
         
         if topic_problems:
             for p in topic_problems:
@@ -53,6 +78,10 @@ def format_stats_markdown(stats):
 pie title Topic-wise Distribution
 {mermaid_slices}```
 
+#### 🔗 Clickable Topic Index & Legend
+| Color | Topic | Solved Count | Percentage |
+| :---: | :--- | :---: | :---: |
+{legend_rows}
 #### 📂 Topic-wise Breakdowns
 {topic_breakdowns}<!-- END_LEETCODE_STATS -->"""
 
