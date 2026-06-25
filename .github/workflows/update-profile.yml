@@ -1,0 +1,79 @@
+name: Update Profile LeetCode Stats
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch: # Allows manual trigger from the Actions tab
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the source repository (leetcode-problem-solve)
+      - name: Checkout Source Repo
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-for-system: true
+          python-version: '3.10'
+          cache: 'pip'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # Step 4: Generate Stats and Pie Chart
+      - name: Generate LeetCode Stats & Chart
+        run: |
+          python generate_stats.py
+
+      # Step 5: Commit and Push stats.json & pie chart to Source Repo
+      - name: Commit changes to Source Repo
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stats.json leetcode_stats.png
+          # Commit only if there are changes. Use [skip ci] to prevent recursion.
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "Update stats.json and topic pie chart [skip ci]"
+            git push
+          else
+            echo "No changes in stats or pie chart."
+          fi
+
+      # Step 6: Checkout Target Profile Repository (santoshkumarmahato17)
+      - name: Checkout Target Profile Repo
+        uses: actions/checkout@v3
+        with:
+          repository: santoshkumarmahato17/santoshkumarmahato17
+          token: ${{ secrets.PAT_TOKEN }}
+          path: target-repo
+
+      # Step 7: Copy stats and chart to Target Repo, and run README generator
+      - name: Update Target Profile README
+        run: |
+          cp stats.json target-repo/
+          cp leetcode_stats.png target-repo/
+          python generate_readme.py target-repo
+
+      # Step 8: Commit and Push to Target Profile Repository
+      - name: Commit and Push to Target Repo
+        run: |
+          cd target-repo
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md leetcode_stats.png stats.json
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "Auto-update LeetCode statistics and pie chart"
+            git push
+          else
+            echo "No changes to the profile README."
+          fi
