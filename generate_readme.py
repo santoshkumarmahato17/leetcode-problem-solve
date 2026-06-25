@@ -4,50 +4,45 @@ import re
 
 def format_stats_markdown(stats):
     """
-    Formats the LeetCode stats and pie chart image into a clean, modern HTML/Markdown layout.
+    Formats the LeetCode stats into a clean, modern native Markdown layout
+    using a dynamic Mermaid pie chart.
     """
     total_solved = stats["total_solved"]
     last_updated = stats["last_updated"]
     distribution = stats["topic_distribution"]
     
+    # Filter out categories with 0 solved problems for the chart
+    filtered_dist = {k: v for k, v in distribution.items() if v > 0}
+    
     # Generate table rows for topics
     topic_rows = ""
     for topic, count in distribution.items():
-        # Humanize topic name for display if needed (e.g. DynamicProgramming -> Dynamic Programming)
+        # Humanize topic name for display (e.g. DynamicProgramming -> Dynamic Programming)
         display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
-        topic_rows += f"            <tr><td><b>{display_name}</b></td><td align='center'><code>{count}</code></td></tr>\n"
+        topic_rows += f"| {display_name} | `{count}` |\n"
+        
+    # Generate Mermaid slices
+    mermaid_slices = ""
+    for topic, count in filtered_dist.items():
+        display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
+        mermaid_slices += f'    "{display_name}" : {count}\n'
         
     markdown_content = f"""<!-- START_LEETCODE_STATS -->
 ### 📊 LeetCode Progress & Stats
 
-<div align="center">
-  <table border="0" style="border-collapse: collapse; border: none; width: 100%;">
-    <tr style="border: none;">
-      <td width="50%" valign="top" style="border: none; padding-right: 15px;">
-        <h4>🏆 Solved Problems Summary</h4>
-        <ul>
-          <li><b>Total Solved:</b> <code>{total_solved}</code></li>
-          <li><b>Last Updated:</b> <code>{last_updated}</code></li>
-        </ul>
-        <h4>📂 Topic-wise Breakdowns</h4>
-        <table style="width: 100%;">
-          <thead>
-            <tr>
-              <th align="left">Topic</th>
-              <th align="center">Solved Count</th>
-            </tr>
-          </thead>
-          <tbody>
-{topic_rows}          </tbody>
-        </table>
-      </td>
-      <td width="50%" valign="top" align="center" style="border: none; padding-left: 15px;">
-        <h4>📈 Topic Distribution Chart</h4>
-        <img src="leetcode_stats.png" width="380px" alt="LeetCode Topic Distribution" />
-      </td>
-    </tr>
-  </table>
-</div>
+#### 🏆 Solved Problems Summary
+- **Total Solved:** `{total_solved}`
+- **Last Updated:** `{last_updated}`
+
+#### 📈 Topic-wise Distribution Chart
+```mermaid
+pie title Topic-wise Distribution
+{mermaid_slices}```
+
+#### 📂 Topic-wise Breakdowns
+| Topic | Solved Count |
+| :--- | :---: |
+{topic_rows}
 <!-- END_LEETCODE_STATS -->"""
 
     return markdown_content
@@ -124,8 +119,6 @@ My automated LeetCode statistics tracking dashboard.
     print("Created new README.md with LeetCode stats.")
 
 if __name__ == "__main__":
-    # In GitHub Actions, the script runs in the source repository folder
-    # We will pass the target repository path as an argument or look for a default
     import sys
     
     source_dir = os.path.dirname(os.path.abspath(__file__))
@@ -142,7 +135,6 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         target_path = sys.argv[1]
     else:
-        # Default fallback: check if target-repo directory exists in parent directory
         target_path = os.path.join(os.path.dirname(source_dir), "target-repo")
         
     if not os.path.exists(target_path):
