@@ -79,11 +79,13 @@ def format_stats_markdown(stats):
 - **Last Updated:** `{last_updated}`
 
 #### 📈 Topic-wise Distribution Chart
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="leetcode_stats_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="leetcode_stats_light.svg">
-  <img alt="Topic-wise Distribution Chart" src="leetcode_stats_light.svg" width="480">
-</picture>
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="leetcode_stats_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="leetcode_stats_light.svg">
+    <img alt="Topic-wise Distribution Chart" src="leetcode_stats_light.svg" width="480">
+  </picture>
+</div>
 
 #### 🔗 Clickable Topic Index & Legend
 | Color | Topic | Solved Count | Percentage | Progress Bar |

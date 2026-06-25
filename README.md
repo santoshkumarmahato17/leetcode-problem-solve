@@ -135,11 +135,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 - **Last Updated:** `2026-06-26 03:38:02 India Standard Time`
 
 #### 📈 Topic-wise Distribution Chart
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="leetcode_stats_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="leetcode_stats_light.svg">
-  <img alt="Topic-wise Distribution Chart" src="leetcode_stats_light.svg" width="480">
-</picture>
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="leetcode_stats_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="leetcode_stats_light.svg">
+    <img alt="Topic-wise Distribution Chart" src="leetcode_stats_light.svg" width="480">
+  </picture>
+</div>
 
 #### 🔗 Clickable Topic Index & Legend
 | Color | Topic | Solved Count | Percentage | Progress Bar |
