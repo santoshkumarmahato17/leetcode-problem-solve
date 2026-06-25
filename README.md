@@ -16,6 +16,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0084-largest-rectangle-in-histogram](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0084-largest-rectangle-in-histogram) |
 | [0088-merge-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0088-merge-sorted-array) |
+| [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
 | [0283-move-zeroes](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0283-move-zeroes) |
 | [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 | [0845-longest-mountain-in-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0845-longest-mountain-in-array) |
@@ -76,10 +77,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
 | [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 ## Sliding Window
 |  |
 | ------- |
+| [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
 | [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 ## Heap (Priority Queue)
 |  |
@@ -113,4 +116,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0070-climbing-stairs](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0070-climbing-stairs) |
+## Prefix Sum
+|  |
+| ------- |
+| [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
 <!---LeetCode Topics End-->
