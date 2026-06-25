@@ -44,12 +44,15 @@ def format_stats_markdown(stats):
         "HashMap": "🟫"
     }
 
+    # Calculate sum of all category counts to align percentages with pie chart slices
+    total_distribution_sum = sum(distribution.values())
+
     # Generate interactive clickable legend table with text progress bars for mobile app support
     legend_rows = ""
     for topic, count in distribution.items():
         emoji = COLOR_MAP.get(topic, "⚪")
         display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
-        percentage = (count / total_solved * 100) if total_solved > 0 else 0
+        percentage = (count / total_distribution_sum * 100) if total_distribution_sum > 0 else 0
         percentage_str = f"{round(percentage)}%"
         progress_bar = make_progress_bar(percentage)
         
