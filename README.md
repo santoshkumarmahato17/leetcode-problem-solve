@@ -12,6 +12,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0283-move-zeroes](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0283-move-zeroes) |
 | [0905-sort-array-by-parity](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0905-sort-array-by-parity) |
 | [0922-sort-array-by-parity-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0922-sort-array-by-parity-ii) |
+| [0977-squares-of-a-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0977-squares-of-a-sorted-array) |
 | [1250-check-if-it-is-a-good-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1250-check-if-it-is-a-good-array) |
 ## Math
 |  |
@@ -31,6 +32,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0344-reverse-string](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0344-reverse-string) |
 | [0905-sort-array-by-parity](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0905-sort-array-by-parity) |
 | [0922-sort-array-by-parity-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0922-sort-array-by-parity-ii) |
+| [0977-squares-of-a-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0977-squares-of-a-sorted-array) |
 ## Greedy
 |  |
 | ------- |
@@ -40,6 +42,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0905-sort-array-by-parity](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0905-sort-array-by-parity) |
 | [0922-sort-array-by-parity-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0922-sort-array-by-parity-ii) |
+| [0977-squares-of-a-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0977-squares-of-a-sorted-array) |
 ## String
 |  |
 | ------- |
