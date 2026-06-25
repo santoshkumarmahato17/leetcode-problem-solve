@@ -14,6 +14,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0088-merge-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0088-merge-sorted-array) |
 | [0283-move-zeroes](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0283-move-zeroes) |
+| [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 | [0905-sort-array-by-parity](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0905-sort-array-by-parity) |
 | [0922-sort-array-by-parity-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0922-sort-array-by-parity-ii) |
 | [0977-squares-of-a-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0977-squares-of-a-sorted-array) |
@@ -38,6 +39,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0088-merge-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0088-merge-sorted-array) |
 | [0283-move-zeroes](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0283-move-zeroes) |
 | [0344-reverse-string](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0344-reverse-string) |
+| [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 | [0905-sort-array-by-parity](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0905-sort-array-by-parity) |
 | [0922-sort-array-by-parity-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0922-sort-array-by-parity-ii) |
 | [0977-squares-of-a-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0977-squares-of-a-sorted-array) |
@@ -51,6 +53,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0015-3sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0015-3sum) |
 | [0018-4sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0018-4sum) |
 | [0088-merge-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0088-merge-sorted-array) |
+| [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 | [0905-sort-array-by-parity](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0905-sort-array-by-parity) |
 | [0922-sort-array-by-parity-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0922-sort-array-by-parity-ii) |
 | [0977-squares-of-a-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0977-squares-of-a-sorted-array) |
@@ -58,4 +61,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0344-reverse-string](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0344-reverse-string) |
+## Binary Search
+|  |
+| ------- |
+| [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
+## Sliding Window
+|  |
+| ------- |
+| [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 <!---LeetCode Topics End-->
