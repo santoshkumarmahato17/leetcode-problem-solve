@@ -27,18 +27,18 @@ jobs:
         run: |
           python generate_stats.py
 
-      # Step 4: Commit and Push stats.json to Source Repo
+      # Step 4: Commit and Push stats.json & leetcode_stats.svg to Source Repo
       - name: Commit changes to Source Repo
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stats.json
+          git add stats.json leetcode_stats.svg
           # Commit only if there are changes. Use [skip ci] to prevent recursion.
           if ! git diff --quiet || ! git diff --staged --quiet; then
-            git commit -m "Update stats.json [skip ci]"
+            git commit -m "Update stats.json and chart [skip ci]"
             git push
           else
-            echo "No changes in stats.json."
+            echo "No changes in stats.json or chart."
           fi
 
       # Step 5: Checkout Target Profile Repository (santoshkumarmahato17)
@@ -49,10 +49,11 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
           path: target-repo
 
-      # Step 6: Copy stats to Target Repo, and run README generator
+      # Step 6: Copy stats & SVG chart to Target Repo, and run README generator
       - name: Update Target Profile README
         run: |
           cp stats.json target-repo/
+          cp leetcode_stats.svg target-repo/
           python generate_readme.py target-repo
 
       # Step 7: Commit and Push to Target Profile Repository
@@ -61,7 +62,7 @@ jobs:
           cd target-repo
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md stats.json
+          git add README.md stats.json leetcode_stats.svg
           # Remove any existing leetcode_stats.png if it was pushed previously
           if [ -f leetcode_stats.png ]; then
             git rm leetcode_stats.png

@@ -14,7 +14,7 @@ def make_progress_bar(percentage, length=10):
 def format_stats_markdown(stats):
     """
     Formats the LeetCode stats into a clean, modern native Markdown layout
-    using a dynamic Mermaid pie chart, clickable legend index with text progress bars,
+    using a dynamic SVG chart, clickable legend index with text progress bars,
     and collapsible topic lists.
     """
     total_solved = stats["total_solved"]
@@ -22,15 +22,6 @@ def format_stats_markdown(stats):
     distribution = stats["topic_distribution"]
     problems_by_topic = stats.get("problems_by_topic", {})
     
-    # Filter out categories with 0 solved problems for the chart
-    filtered_dist = {k: v for k, v in distribution.items() if v > 0}
-    
-    # Generate Mermaid slices
-    mermaid_slices = ""
-    for topic, count in filtered_dist.items():
-        display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
-        mermaid_slices += f'    "{display_name}" : {count}\n'
-        
     # Color emojis mapping for visual interactive legend
     COLOR_MAP = {
         "Arrays": "🟦",
@@ -88,9 +79,7 @@ def format_stats_markdown(stats):
 - **Last Updated:** `{last_updated}`
 
 #### 📈 Topic-wise Distribution Chart
-```mermaid
-pie title Topic-wise Distribution
-{mermaid_slices}```
+![Topic-wise Distribution Chart](leetcode_stats.svg)
 
 #### 🔗 Clickable Topic Index & Legend
 | Color | Topic | Solved Count | Percentage | Progress Bar |

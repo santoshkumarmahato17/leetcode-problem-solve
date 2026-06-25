@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #24292f;
+      --border-color: #d0d7de;
+      --title-color: #1f2328;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0d1117;
+        --text-color: #c9d1d9;
+        --border-color: #30363d;
+        --title-color: #f0f6fc;
+      }
+    }
+    rect.card-bg {
+      fill: var(--bg-color);
+      stroke: var(--border-color);
+      stroke-width: 1;
+      rx: 8px;
+    }
+    text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    text.title {
+      fill: var(--title-color);
+      font-size: 16px;
+      font-weight: 600;
+      text-anchor: middle;
+    }
+    text.label {
+      fill: var(--text-color);
+      font-size: 11px;
+      font-weight: 600;
+    }
+    text.percentage {
+      fill: #ffffff;
+      font-size: 10px;
+      font-weight: 700;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+  </style>
+  <rect class="card-bg" width="100%" height="100%" />
+  <text class="title" x="240" y="35">Topic-wise Distribution</text>
+  <g>
+    <path d="M 150.00 50.00 A 90.00 90.00 0 1 1 62.26 160.03 L 101.25 151.13 A 50.00 50.00 0 1 0 150.00 90.00 Z" fill="#58a6ff" stroke="var(--bg-color)" stroke-width="1.5" />
+    <text class="percentage" x="204.73" y="183.64">71%</text>
+    <path d="M 62.26 160.03 A 90.00 90.00 0 0 1 62.26 119.97 L 101.25 128.87 A 50.00 50.00 0 0 0 101.25 151.13 Z" fill="#bc8cff" stroke="var(--bg-color)" stroke-width="1.5" />
+    <text class="percentage" x="80.00" y="140.00">7%</text>
+    <path d="M 62.26 119.97 A 90.00 90.00 0 0 1 93.89 69.64 L 118.83 100.91 A 50.00 50.00 0 0 0 101.25 128.87 Z" fill="#ff7b72" stroke="var(--bg-color)" stroke-width="1.5" />
+    <text class="percentage" x="90.73" y="102.76">11%</text>
+    <path d="M 93.89 69.64 A 90.00 90.00 0 0 1 129.97 52.26 L 138.87 91.25 A 50.00 50.00 0 0 0 118.83 100.91 Z" fill="#f0883e" stroke="var(--bg-color)" stroke-width="1.5" />
+    <text class="percentage" x="119.63" y="76.93">7%</text>
+    <path d="M 129.97 52.26 A 90.00 90.00 0 0 1 150.00 50.00 L 150.00 90.00 A 50.00 50.00 0 0 0 138.87 91.25 Z" fill="#7ee787" stroke="var(--bg-color)" stroke-width="1.5" />
+    <rect x="280" y="72" width="12" height="12" rx="2" fill="#58a6ff" />
+    <text class="label" x="300" y="80">Arrays (71%)</text>
+    <rect x="280" y="94" width="12" height="12" rx="2" fill="#bc8cff" />
+    <text class="label" x="300" y="102">Strings (7%)</text>
+    <rect x="280" y="116" width="12" height="12" rx="2" fill="#ff7b72" />
+    <text class="label" x="300" y="124">Dynamic Programming (11%)</text>
+    <rect x="280" y="138" width="12" height="12" rx="2" fill="#f0883e" />
+    <text class="label" x="300" y="146">Stack (7%)</text>
+    <rect x="280" y="160" width="12" height="12" rx="2" fill="#7ee787" />
+    <text class="label" x="300" y="168">Queue (4%)</text>
+  </g>
+</svg>
