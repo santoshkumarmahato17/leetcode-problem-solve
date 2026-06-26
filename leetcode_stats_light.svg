@@ -31,24 +31,24 @@
   <rect class="card-bg" width="100%" height="100%" />
   <text class="title" x="240" y="35">Topic-wise Distribution</text>
   <g>
-    <path d="M 150.00 50.00 A 90.00 90.00 0 1 1 62.26 160.03 L 101.25 151.13 A 50.00 50.00 0 1 0 150.00 90.00 Z" fill="#58a6ff" stroke="#ffffff" stroke-width="1.5" />
-    <text class="percentage" x="204.73" y="183.64">71%</text>
-    <path d="M 62.26 160.03 A 90.00 90.00 0 0 1 62.26 119.97 L 101.25 128.87 A 50.00 50.00 0 0 0 101.25 151.13 Z" fill="#bc8cff" stroke="#ffffff" stroke-width="1.5" />
-    <text class="percentage" x="80.00" y="140.00">7%</text>
-    <path d="M 62.26 119.97 A 90.00 90.00 0 0 1 93.89 69.64 L 118.83 100.91 A 50.00 50.00 0 0 0 101.25 128.87 Z" fill="#ff7b72" stroke="#ffffff" stroke-width="1.5" />
-    <text class="percentage" x="90.73" y="102.76">11%</text>
-    <path d="M 93.89 69.64 A 90.00 90.00 0 0 1 129.97 52.26 L 138.87 91.25 A 50.00 50.00 0 0 0 118.83 100.91 Z" fill="#f0883e" stroke="#ffffff" stroke-width="1.5" />
-    <text class="percentage" x="119.63" y="76.93">7%</text>
-    <path d="M 129.97 52.26 A 90.00 90.00 0 0 1 150.00 50.00 L 150.00 90.00 A 50.00 50.00 0 0 0 138.87 91.25 Z" fill="#7ee787" stroke="#ffffff" stroke-width="1.5" />
+    <path d="M 150.00 50.00 A 90.00 90.00 0 1 1 61.19 154.56 L 100.66 148.09 A 50.00 50.00 0 1 0 150.00 90.00 Z" fill="#58a6ff" stroke="#ffffff" stroke-width="1.5" />
+    <text class="percentage" x="203.35" y="185.32">72%</text>
+    <path d="M 61.19 154.56 A 90.00 90.00 0 0 1 63.28 115.92 L 101.82 126.62 A 50.00 50.00 0 0 0 100.66 148.09 Z" fill="#bc8cff" stroke="#ffffff" stroke-width="1.5" />
+    <text class="percentage" x="80.10" y="136.21">7%</text>
+    <path d="M 63.28 115.92 A 90.00 90.00 0 0 1 95.53 68.35 L 119.74 100.20 A 50.00 50.00 0 0 0 101.82 126.62 Z" fill="#ff7b72" stroke="#ffffff" stroke-width="1.5" />
+    <text class="percentage" x="92.06" y="100.72">10%</text>
+    <path d="M 95.53 68.35 A 90.00 90.00 0 0 1 130.65 52.10 L 139.25 91.17 A 50.00 50.00 0 0 0 119.74 100.20 Z" fill="#f0883e" stroke="#ffffff" stroke-width="1.5" />
+    <text class="percentage" x="120.61" y="76.47">7%</text>
+    <path d="M 130.65 52.10 A 90.00 90.00 0 0 1 150.00 50.00 L 150.00 90.00 A 50.00 50.00 0 0 0 139.25 91.17 Z" fill="#7ee787" stroke="#ffffff" stroke-width="1.5" />
     <rect x="280" y="72" width="12" height="12" rx="2" fill="#58a6ff" />
-    <text class="label" x="300" y="80">Arrays (71%)</text>
+    <text class="label" x="300" y="80">Arrays (72%)</text>
     <rect x="280" y="94" width="12" height="12" rx="2" fill="#bc8cff" />
     <text class="label" x="300" y="102">Strings (7%)</text>
     <rect x="280" y="116" width="12" height="12" rx="2" fill="#ff7b72" />
-    <text class="label" x="300" y="124">Dynamic Programming (11%)</text>
+    <text class="label" x="300" y="124">Dynamic Programming (10%)</text>
     <rect x="280" y="138" width="12" height="12" rx="2" fill="#f0883e" />
     <text class="label" x="300" y="146">Stack (7%)</text>
     <rect x="280" y="160" width="12" height="12" rx="2" fill="#7ee787" />
-    <text class="label" x="300" y="168">Queue (4%)</text>
+    <text class="label" x="300" y="168">Queue (3%)</text>
   </g>
 </svg>
