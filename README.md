@@ -117,6 +117,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Recursion
 |  |
 | ------- |
+| [0021-merge-two-sorted-lists](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0021-merge-two-sorted-lists) |
 | [0050-powx-n](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0050-powx-n) |
 ## Memoization
 |  |
@@ -126,6 +127,10 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
+## Linked List
+|  |
+| ------- |
+| [0021-merge-two-sorted-lists](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0021-merge-two-sorted-lists) |
 <!---LeetCode Topics End-->
 
 <!-- START_LEETCODE_STATS -->
