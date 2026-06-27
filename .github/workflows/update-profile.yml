@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: santoshkumarmahato17/santoshkumarmahato17
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.PROFILE_REPO_TOKEN }}
           path: target-repo
 
       # Step 6: Copy stats & SVG charts to Target Repo, and run README generator
