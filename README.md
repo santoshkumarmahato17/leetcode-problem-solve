@@ -33,6 +33,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0050-powx-n](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0050-powx-n) |
 | [0070-climbing-stairs](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0070-climbing-stairs) |
 | [1250-check-if-it-is-a-good-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1250-check-if-it-is-a-good-array) |
+| [2269-find-the-k-beauty-of-a-number](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/2269-find-the-k-beauty-of-a-number) |
 ## Number Theory
 |  |
 | ------- |
@@ -78,6 +79,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0125-valid-palindrome](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0125-valid-palindrome) |
 | [0344-reverse-string](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0344-reverse-string) |
+| [2269-find-the-k-beauty-of-a-number](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/2269-find-the-k-beauty-of-a-number) |
 ## Binary Search
 |  |
 | ------- |
@@ -90,6 +92,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0643-maximum-average-subarray-i](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0643-maximum-average-subarray-i) |
 | [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
+| [2269-find-the-k-beauty-of-a-number](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/2269-find-the-k-beauty-of-a-number) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
