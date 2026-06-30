@@ -31,6 +31,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Math
 |  |
 | ------- |
+| [0002-add-two-numbers](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0002-add-two-numbers) |
 | [0050-powx-n](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0050-powx-n) |
 | [0070-climbing-stairs](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0070-climbing-stairs) |
 | [1250-check-if-it-is-a-good-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1250-check-if-it-is-a-good-array) |
@@ -123,6 +124,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Recursion
 |  |
 | ------- |
+| [0002-add-two-numbers](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0002-add-two-numbers) |
 | [0021-merge-two-sorted-lists](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0021-merge-two-sorted-lists) |
 | [0050-powx-n](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0050-powx-n) |
 ## Memoization
@@ -136,6 +138,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Linked List
 |  |
 | ------- |
+| [0002-add-two-numbers](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0002-add-two-numbers) |
 | [0021-merge-two-sorted-lists](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0021-merge-two-sorted-lists) |
 ## Queue
 |  |
