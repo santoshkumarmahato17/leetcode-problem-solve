@@ -42,21 +42,25 @@ jobs:
           python generate_stats.py
 
       # Commit generated files to source repository
-      - name: Commit changes to Source Repo
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      # Commit profile repository
+- name: Commit Profile Repository
+  run: |
+    cd profile
 
-          git add stats.json
-          git add leetcode_stats_light.svg
-          git add leetcode_stats_dark.svg
+    git config user.name "github-actions[bot]"
+    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --cached --quiet; then
-            echo "No changes detected."
-          else
-            git commit -m "Update LeetCode stats [skip ci]"
-            git push origin HEAD
-          fi
+    git add .
+
+    if git diff --cached --quiet; then
+      echo "No profile changes."
+    else
+      git commit -m "Auto update LeetCode profile"
+
+      git remote set-url origin https://x-access-token:${{ secrets.PROFILE_REPO_TOKEN }}@github.com/santoshkumarmahato17/santoshkumarmahato17.git
+
+      git push origin HEAD:main
+    fi
 
       # Checkout profile repository
       - name: Checkout Target Profile Repo
