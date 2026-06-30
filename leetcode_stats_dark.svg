@@ -31,29 +31,32 @@
   <rect class="card-bg" width="100%" height="100%" />
   <text class="title" x="240" y="35">Topic-wise Distribution</text>
   <g>
-    <path d="M 150.00 50.00 A 90.00 90.00 0 1 1 78.18 194.24 L 110.10 170.13 A 50.00 50.00 0 1 0 150.00 90.00 Z" fill="#58a6ff" stroke="#0d1117" stroke-width="1.5" />
-    <text class="percentage" x="212.66" y="171.20">65%</text>
-    <path d="M 78.18 194.24 A 90.00 90.00 0 0 1 60.38 148.30 L 100.21 144.61 A 50.00 50.00 0 0 0 110.10 170.13 Z" fill="#bc8cff" stroke="#0d1117" stroke-width="1.5" />
-    <text class="percentage" x="84.73" y="165.29">9%</text>
-    <path d="M 60.38 148.30 A 90.00 90.00 0 0 1 69.44 99.88 L 105.24 117.71 A 50.00 50.00 0 0 0 100.21 144.61 Z" fill="#ff7b72" stroke="#0d1117" stroke-width="1.5" />
-    <text class="percentage" x="81.19" y="127.14">9%</text>
-    <path d="M 69.44 99.88 A 90.00 90.00 0 0 1 89.37 73.49 L 116.32 103.05 A 50.00 50.00 0 0 0 105.24 117.71 Z" fill="#d29922" stroke="#0d1117" stroke-width="1.5" />
-    <text class="percentage" x="94.14" y="97.82">6%</text>
-    <path d="M 89.37 73.49 A 90.00 90.00 0 0 1 117.49 56.08 L 131.94 93.38 A 50.00 50.00 0 0 0 116.32 103.05 Z" fill="#f0883e" stroke="#0d1117" stroke-width="1.5" />
-    <text class="percentage" x="113.15" y="80.48">6%</text>
-    <path d="M 117.49 56.08 A 90.00 90.00 0 0 1 150.00 50.00 L 150.00 90.00 A 50.00 50.00 0 0 0 131.94 93.38 Z" fill="#7ee787" stroke="#0d1117" stroke-width="1.5" />
-    <text class="percentage" x="137.14" y="71.19">6%</text>
+    <path d="M 150.00 50.00 A 90.00 90.00 0 1 1 81.06 197.85 L 111.70 172.14 A 50.00 50.00 0 1 0 150.00 90.00 Z" fill="#58a6ff" stroke="#0d1117" stroke-width="1.5" />
+    <text class="percentage" x="213.44" y="169.58">64%</text>
+    <path d="M 81.06 197.85 A 90.00 90.00 0 0 1 61.37 155.63 L 100.76 148.68 A 50.00 50.00 0 0 0 111.70 172.14 Z" fill="#bc8cff" stroke="#0d1117" stroke-width="1.5" />
+    <text class="percentage" x="86.56" y="169.58">8%</text>
+    <path d="M 61.37 155.63 A 90.00 90.00 0 0 1 65.43 109.22 L 103.02 122.90 A 50.00 50.00 0 0 0 100.76 148.68 Z" fill="#ff7b72" stroke="#0d1117" stroke-width="1.5" />
+    <text class="percentage" x="80.27" y="133.90">8%</text>
+    <path d="M 65.43 109.22 A 90.00 90.00 0 0 1 81.06 82.15 L 111.70 107.86 A 50.00 50.00 0 0 0 103.02 122.90 Z" fill="#d29922" stroke="#0d1117" stroke-width="1.5" />
+    <text class="percentage" x="89.38" y="105.00">6%</text>
+    <path d="M 81.06 82.15 A 90.00 90.00 0 0 1 105.00 62.06 L 125.00 96.70 A 50.00 50.00 0 0 0 111.70 107.86 Z" fill="#f0883e" stroke="#0d1117" stroke-width="1.5" />
+    <text class="percentage" x="105.00" y="86.38">6%</text>
+    <path d="M 105.00 62.06 A 90.00 90.00 0 0 1 134.37 51.37 L 141.32 90.76 A 50.00 50.00 0 0 0 125.00 96.70 Z" fill="#7ee787" stroke="#0d1117" stroke-width="1.5" />
+    <text class="percentage" x="126.06" y="74.22">6%</text>
+    <path d="M 134.37 51.37 A 90.00 90.00 0 0 1 150.00 50.00 L 150.00 90.00 A 50.00 50.00 0 0 0 141.32 90.76 Z" fill="#db61a2" stroke="#0d1117" stroke-width="1.5" />
     <rect x="280" y="72" width="12" height="12" rx="2" fill="#58a6ff" />
-    <text class="label" x="300" y="80">Arrays (65%)</text>
+    <text class="label" x="300" y="80">Arrays (64%)</text>
     <rect x="280" y="94" width="12" height="12" rx="2" fill="#bc8cff" />
-    <text class="label" x="300" y="102">Strings (9%)</text>
+    <text class="label" x="300" y="102">Strings (8%)</text>
     <rect x="280" y="116" width="12" height="12" rx="2" fill="#ff7b72" />
-    <text class="label" x="300" y="124">Dynamic Programming (9%)</text>
+    <text class="label" x="300" y="124">Dynamic Programming (8%)</text>
     <rect x="280" y="138" width="12" height="12" rx="2" fill="#d29922" />
     <text class="label" x="300" y="146">Linked List (6%)</text>
     <rect x="280" y="160" width="12" height="12" rx="2" fill="#f0883e" />
     <text class="label" x="300" y="168">Stack (6%)</text>
     <rect x="280" y="182" width="12" height="12" rx="2" fill="#7ee787" />
     <text class="label" x="300" y="190">Queue (6%)</text>
+    <rect x="280" y="204" width="12" height="12" rx="2" fill="#db61a2" />
+    <text class="label" x="300" y="212">Hash Map (3%)</text>
   </g>
 </svg>
