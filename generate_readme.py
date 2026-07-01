@@ -47,7 +47,7 @@ def format_stats_markdown(stats):
         percentage_str = f"{round(percentage)}%"
         progress_bar = make_progress_bar(percentage)
         
-        folder_url = f"https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/{topic}"
+        folder_url = f"https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/main/{topic}"
         legend_rows += f"| {emoji} | [**{display_name}**]({folder_url}) | `{count}` | `{percentage_str}` | `{progress_bar}` |\n"
 
     # Generate collapsible breakdowns for topics (linking headers as well)
@@ -56,7 +56,7 @@ def format_stats_markdown(stats):
         count = distribution[topic]
         display_name = re.sub(r'(?<!^)(?=[A-Z])', ' ', topic)
         topic_problems = problems_by_topic.get(topic, [])
-        folder_url = f"https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/{topic}"
+        folder_url = f"https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/main/{topic}"
         
         topic_breakdowns += f"<details>\n"
         topic_breakdowns += f"<summary><b><a href=\"{folder_url}\">{display_name}</a></b> ({count} solved)</summary>\n<br>\n\n"

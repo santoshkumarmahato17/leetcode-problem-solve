@@ -102,7 +102,7 @@ def parse_readme_topics(readme_path):
             match = re.search(r'\[([^\]]+)\]\(([^)]+)\)', line)
             if match:
                 problem_name = match.group(1)
-                problem_url = match.group(2)
+                problem_url = match.group(2).replace("/tree/master/", "/tree/main/").replace("/blob/master/", "/blob/main/")
                 topic_problems[current_topic][problem_name] = problem_url
                 
     return topic_problems

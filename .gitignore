@@ -1,0 +1,7 @@
+# Generated stats and charts
+stats.json
+leetcode_stats_light.svg
+leetcode_stats_dark.svg
+
+# Checked out profile repository folder (used in CI/CD)
+profile/

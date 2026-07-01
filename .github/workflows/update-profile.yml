@@ -38,7 +38,7 @@ jobs:
         run: |
           python generate_stats.py
 
-      # Checkout profile repository
+      # Checkout profile repository (authenticates with PROFILE_REPO_TOKEN and persists credentials)
       - name: Checkout Profile Repository
         uses: actions/checkout@v4
         with:
@@ -46,7 +46,7 @@ jobs:
           token: ${{ secrets.PROFILE_REPO_TOKEN }}
           path: profile
 
-      # Copy generated files
+      # Copy generated files to profile repo directory and generate README
       - name: Copy Files
         run: |
           cp stats.json profile/
@@ -54,25 +54,45 @@ jobs:
           cp leetcode_stats_dark.svg profile/
           python generate_readme.py profile
 
-      # Commit and Push
+      # Commit and Push to Profile Repository
       - name: Push to Profile Repository 
         working-directory: profile
         env:
           TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
-        run: 
-          git config user.name "github-action[bot]"
-          git config email.name "41898282+github-actions[bot]@users.noreply.github.com"
+        run: |
+          # 1. Verify token exists
+          if [ -z "${TOKEN}" ]; then
+            echo "::error::PROFILE_REPO_TOKEN secret is empty or not set."
+            echo "Please set up a GitHub Personal Access Token (PAT) with write access to 'santoshkumarmahato17/santoshkumarmahato17' as a repository secret."
+            exit 1
+          fi
 
-          git add 
+          # 2. Setup Git user configuration
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # 3. Stage stats and readme files
+          git add stats.json leetcode_stats_light.svg leetcode_stats_dark.svg README.md
+
+          # 4. Check if there are differences to commit
           if git diff --cached --quiet; then
-            echo "No changes."
+            echo "No changes in LeetCode profile stats."
             exit 0
           fi
 
-          git commit -m "Auto update profile"
+          # 5. Commit changes with skip-ci indicator to prevent loops
+          git commit -m "Auto update LeetCode profile stats [skip ci]"
 
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/santoshkumarmahato17/santoshkumarmahato17.git
+          # 6. Get active branch name dynamically
+          BRANCH_NAME=$(git branch --show-current)
+          if [ -z "$BRANCH_NAME" ]; then
+            BRANCH_NAME="main"
+          fi
+          echo "Target profile branch: $BRANCH_NAME"
 
-          git push origin HEAD:main
-   
+          # 7. Pull any upstream changes to resolve non-fast-forward situations.
+          # -X theirs resolves conflicts in favor of our generated files during rebase.
+          git pull origin "$BRANCH_NAME" --rebase --autostash -X theirs
+
+          # 8. Push back to the profile repository
+          git push origin HEAD:"$BRANCH_NAME"
