@@ -38,6 +38,37 @@ jobs:
         run: |
           python generate_stats.py
 
+      # Verify Profile Token Permissions
+      - name: Verify Token Permissions
+        env:
+          TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+        run: |
+          if [ -z "${TOKEN}" ]; then
+            echo "::error::PROFILE_REPO_TOKEN secret is empty or not set."
+            echo "Please set up a GitHub Personal Access Token (PAT) with write access to 'santoshkumarmahato17/santoshkumarmahato17' as a repository secret."
+            exit 1
+          fi
+
+          echo "Verifying PROFILE_REPO_TOKEN with GitHub API..."
+          RESPONSE=$(curl -s -H "Authorization: token ${TOKEN}" https://api.github.com/repos/santoshkumarmahato17/santoshkumarmahato17)
+          
+          MESSAGE=$(echo "$RESPONSE" | jq -r '.message // empty')
+          if [ "$MESSAGE" = "Bad credentials" ]; then
+            echo "::error::PROFILE_REPO_TOKEN is invalid or expired."
+            exit 1
+          elif [ "$MESSAGE" = "Not Found" ]; then
+            echo "::error::Repository 'santoshkumarmahato17/santoshkumarmahato17' not found or token has no read access."
+            exit 1
+          fi
+
+          PUSH_PERM=$(echo "$RESPONSE" | jq -r '.permissions.push // empty')
+          if [ "$PUSH_PERM" != "true" ]; then
+            echo "::error::The PROFILE_REPO_TOKEN does not have write (push) access to 'santoshkumarmahato17/santoshkumarmahato17'."
+            echo "Please make sure your PAT has the 'repo' scope (classic PAT) or 'Contents: Write' permission (fine-grained PAT) for 'santoshkumarmahato17/santoshkumarmahato17'."
+            exit 1
+          fi
+          echo "Token verified successfully! Write access is confirmed."
+
       # Checkout profile repository (authenticates with PROFILE_REPO_TOKEN and persists credentials)
       - name: Checkout Profile Repository
         uses: actions/checkout@v4
