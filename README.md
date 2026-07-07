@@ -82,12 +82,14 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0125-valid-palindrome](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0125-valid-palindrome) |
 | [0344-reverse-string](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0344-reverse-string) |
+| [1208-get-equal-substrings-within-budget](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1208-get-equal-substrings-within-budget) |
 | [2269-find-the-k-beauty-of-a-number](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/2269-find-the-k-beauty-of-a-number) |
 ## Binary Search
 |  |
 | ------- |
 | [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
 | [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
+| [1208-get-equal-substrings-within-budget](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1208-get-equal-substrings-within-budget) |
 ## Sliding Window
 |  |
 | ------- |
@@ -95,6 +97,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0239-sliding-window-maximum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0239-sliding-window-maximum) |
 | [0643-maximum-average-subarray-i](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0643-maximum-average-subarray-i) |
 | [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
+| [1208-get-equal-substrings-within-budget](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1208-get-equal-substrings-within-budget) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2269-find-the-k-beauty-of-a-number](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/2269-find-the-k-beauty-of-a-number) |
 ## Heap (Priority Queue)
@@ -136,6 +139,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
+| [1208-get-equal-substrings-within-budget](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1208-get-equal-substrings-within-budget) |
 ## Linked List
 |  |
 | ------- |
