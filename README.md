@@ -30,6 +30,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1250-check-if-it-is-a-good-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1250-check-if-it-is-a-good-array) |
 | [1343-number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1343-number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold) |
 | [1493-longest-subarray-of-1s-after-deleting-one-element](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1493-longest-subarray-of-1s-after-deleting-one-element) |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1838-frequency-of-the-most-frequent-element) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 ## Math
 |  |
@@ -67,6 +68,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0011-container-with-most-water) |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1838-frequency-of-the-most-frequent-element) |
 ## Sorting
 |  |
 | ------- |
@@ -78,6 +80,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0905-sort-array-by-parity](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0905-sort-array-by-parity) |
 | [0922-sort-array-by-parity-ii](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0922-sort-array-by-parity-ii) |
 | [0977-squares-of-a-sorted-array](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0977-squares-of-a-sorted-array) |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1838-frequency-of-the-most-frequent-element) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 ## String
 |  |
@@ -93,6 +96,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
 | [0658-find-k-closest-elements](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0658-find-k-closest-elements) |
 | [1208-get-equal-substrings-within-budget](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1208-get-equal-substrings-within-budget) |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1838-frequency-of-the-most-frequent-element) |
 ## Sliding Window
 |  |
 | ------- |
@@ -104,6 +108,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1208-get-equal-substrings-within-budget](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1208-get-equal-substrings-within-budget) |
 | [1343-number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1343-number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold) |
 | [1493-longest-subarray-of-1s-after-deleting-one-element](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1493-longest-subarray-of-1s-after-deleting-one-element) |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1838-frequency-of-the-most-frequent-element) |
 | [1984-minimum-difference-between-highest-and-lowest-of-k-scores](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1984-minimum-difference-between-highest-and-lowest-of-k-scores) |
 | [2269-find-the-k-beauty-of-a-number](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/2269-find-the-k-beauty-of-a-number) |
 ## Heap (Priority Queue)
@@ -147,6 +152,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0209-minimum-size-subarray-sum](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/0209-minimum-size-subarray-sum) |
 | [1208-get-equal-substrings-within-budget](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1208-get-equal-substrings-within-budget) |
+| [1838-frequency-of-the-most-frequent-element](https://github.com/santoshkumarmahato17/leetcode-problem-solve/tree/master/1838-frequency-of-the-most-frequent-element) |
 ## Linked List
 |  |
 | ------- |
